@@ -23,14 +23,11 @@ document
   .getElementById('noakhali-donate-button')
   .addEventListener('click', function (event) {
     event.preventDefault();
-    if (
-      isNaN(getInputById('noakhali-input')) ||
-      getInputById('noakhali-input') <= 0
-    ) {
+    if (isNaN(getInputById('noakhali-input')) || getInputById('noakhali-input') <= 0) {
       alert('Please insert a valid number please😥');
     } else if (
       totalBalance('main-balance') <= 0 ||
-      getInputById('noakhali-input') > totalBalance('noakhali-balance')
+      getInputById('noakhali-input') > totalBalance('main-balance')
     ) {
       alert('Insufficient balance 😫');
     } else {
@@ -40,10 +37,10 @@ document
       const totalSub =
         totalBalance('main-balance') - getInputById('noakhali-input');
       document.getElementById('main-balance').innerText = totalSub;
-      document.getElementById('my_modal_1').showModal();
+      document.getElementById('my_modal_2').showModal();
 
-      // History
-      // noakhali
+      // history
+      // feni
       const historyDiv = document.createElement('div');
       historyDiv.classList.add(
         'border',
